@@ -10,13 +10,23 @@
       </li>
 
       <li class="nav-item">
-        <router-link to="/products" class="nav-link">
+        <router-link to="/subjects" class="nav-link">
           <i class="nav-icon fas fa-list orange"></i>
           <p>
-            Product
+            Subjects
           </p>
         </router-link>
       </li>
+
+      <li class="nav-item">
+        <router-link to="/faq" class="nav-link">
+          <i class="nav-icon fas fa-list orange"></i>
+          <p>
+            FAQ
+          </p>
+        </router-link>
+      </li>
+
 
       @can('isAdmin')
         <li class="nav-item">
@@ -44,7 +54,7 @@
             <router-link to="/product/category" class="nav-link">
               <i class="nav-icon fas fa-list-ol green"></i>
               <p>
-                Category
+                Services
               </p>
             </router-link>
           </li>
@@ -52,7 +62,7 @@
             <router-link to="/product/tag" class="nav-link">
               <i class="nav-icon fas fa-tags green"></i>
               <p>
-                Tags
+                Testimonials
               </p>
             </router-link>
           </li>
