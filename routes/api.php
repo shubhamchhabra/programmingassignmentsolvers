@@ -42,5 +42,7 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
         'category' => 'CategoryController',
         'tag' => 'TagController',
         'testimonial' => 'TestimonialController',
+        'faq' => 'FaqController'
+
     ]);
 });

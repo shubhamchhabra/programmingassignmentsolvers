@@ -9,6 +9,7 @@ export default [
     // { path: '/subjects', component: require('./components/Subjects.vue').default },
     { path: '*', component: require('./components/NotFound.vue').default },
     { path: '/testimonial', component: require('./components/testimonial/Testimonial.vue').default },
+    { path: '/faq', component: require('./components/faq/Faq.vue').default },
 
 
 ];
