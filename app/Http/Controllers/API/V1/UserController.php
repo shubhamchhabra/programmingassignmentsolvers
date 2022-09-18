@@ -37,6 +37,10 @@ class UserController extends BaseController
         return $this->sendResponse($users, 'Users list');
     }
 
+    public function list(){
+        return User::all();
+    }
+
     /**
      * Store a newly created resource in storage.
      *

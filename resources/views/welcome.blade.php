@@ -131,7 +131,7 @@
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
                            </div>
                            <div class="media">
-                              <img src="/examples/images/clients/1.jpg" alt="" class="mr-3"> 
+                              <img src="/examples/images/clients/1.jpg" alt="" class="mr-3">
                               <div class="media-body">
                                  <div class="overview">
                                     <div class="name"><b>Paula Wilson</b></div>
@@ -154,7 +154,7 @@
                               <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus quam.</p>
                            </div>
                            <div class="media">
-                              <img src="/examples/images/clients/2.jpg" alt="" class="mr-3"> 
+                              <img src="/examples/images/clients/2.jpg" alt="" class="mr-3">
                               <div class="media-body">
                                  <div class="overview">
                                     <div class="name"><b>Antonio Moreno</b></div>
@@ -181,7 +181,7 @@
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
                            </div>
                            <div class="media">
-                              <img src="/examples/images/clients/3.jpg" alt="" class="mr-3"> 
+                              <img src="/examples/images/clients/3.jpg" alt="" class="mr-3">
                               <div class="media-body">
                                  <div class="overview">
                                     <div class="name"><b>Michael Holz</b></div>
@@ -204,7 +204,7 @@
                               <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt. Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat faucibus quam.</p>
                            </div>
                            <div class="media">
-                              <img src="/examples/images/clients/4.jpg" alt="" class="mr-3"> 
+                              <img src="/examples/images/clients/4.jpg" alt="" class="mr-3">
                               <div class="media-body">
                                  <div class="overview">
                                     <div class="name"><b>Mary Saveley</b></div>
@@ -231,7 +231,7 @@
                               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante.</p>
                            </div>
                            <div class="media">
-                              <img src="/examples/images/clients/5.jpg" alt="" class="mr-3"> 
+                              <img src="/examples/images/clients/5.jpg" alt="" class="mr-3">
                               <div class="media-body">
                                  <div class="overview">
                                     <div class="name"><b>Martin Sommer</b></div>
@@ -463,7 +463,7 @@
 </div>
 </div>
 <!-- Carousel wrapper -->
-<div id="carouselMultiItemExample" class="m-0 primary p-5 carousel slide carousel-dark text-center" data-mdb-ride="carousel">
+<div id="carouselMultiItemExample" class="m-0 primary p-5 carousel slide carousel-dark text-center" data-bs-ride="carousel">
    <!-- Controls -->
    <h1 align="center" class="text-white">
       Testimonial
@@ -473,12 +473,12 @@
    </p>
    <div class="d-flex justify-content-center mb-4">
       <button class="carousel-control-prev position-relative" type="button"
-         data-mdb-target="#carouselMultiItemExample" data-mdb-slide="prev">
+         data-bs-target="#carouselMultiItemExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next position-relative" type="button"
-         data-mdb-target="#carouselMultiItemExample" data-mdb-slide="next">
+         data-bs-target="#carouselMultiItemExample" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
       </button>
@@ -486,206 +486,46 @@
    <!-- Inner -->
    <div class="carousel-inner py-4">
       <!-- Single item -->
-      <div class="carousel-item active">
+       <?php $testimonialCount = 1; ?>
+       <?php
+       foreach($testimonials as $testimonial){
+           $item_class = ($testimonialCount == 1) ? 'active': '';
+           ?>
+      <div class="carousel-item <?php echo $item_class ?>">
          <div class="container">
             <div class="row">
-               <div class="col-lg-4">
+               <div class="col-lg-12">
                   <img class="rounded-circle shadow-1-strong mb-4"
                      src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar"
                      style="width: 150px;" />
-                  <h5 class="mb-3 secondary-text">Anna Deynah</h5>
-                  <p>UX Designer</p>
+                  <h5 class="mb-3 secondary-text"><?php echo $testimonial['user']['name'] ?></h5>
                   <p class="text-white">
                      <i class="fas fa-quote-left pe-2"></i>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
-                     officiis hic tenetur quae quaerat ad velit ab hic tenetur.
+                      <?php echo $testimonial['message'] ?>
                   </p>
                   <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3 secondary-text">John Doe</h5>
-                  <p>Web Developer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                     suscipit laboriosam, nisi ut aliquid commodi.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li>
-                        <i class="fas fa-star-half-alt fa-sm"></i>
-                     </li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3 secondary-text">Maria Kate</h5>
-                  <p>Photographer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                     praesentium voluptatum deleniti atque corrupti.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="far fa-star fa-sm"></i></li>
+                      <?php
+                      for($star = 1; $star <= $testimonial['rating']; $star++ ){
+
+                      ?>
+                      <li><i class="fas fa-star fa-sm"></i></li>
+                      <?php
+                      }
+                      ?>
                   </ul>
                </div>
             </div>
          </div>
       </div>
-      <!-- Single item -->
-      <div class="carousel-item">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-4">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">John Doe</h5>
-                  <p>UX Designer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
-                     officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">Alex Rey</h5>
-                  <p>Web Developer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                     suscipit laboriosam, nisi ut aliquid commodi.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li>
-                        <i class="fas fa-star-half-alt fa-sm"></i>
-                     </li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">Maria Kate</h5>
-                  <p>Photographer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                     praesentium voluptatum deleniti atque corrupti.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="far fa-star fa-sm"></i></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- Single item -->
-      <div class="carousel-item">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-4">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">Anna Deynah</h5>
-                  <p>UX Designer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id
-                     officiis hic tenetur quae quaerat ad velit ab hic tenetur.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(8).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">John Doe</h5>
-                  <p>Web Developer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-                     suscipit laboriosam, nisi ut aliquid commodi.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li>
-                        <i class="fas fa-star-half-alt fa-sm"></i>
-                     </li>
-                  </ul>
-               </div>
-               <div class="col-lg-4 d-none d-lg-block">
-                  <img class="rounded-circle shadow-1-strong mb-4"
-                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(7).webp" alt="avatar"
-                     style="width: 150px;" />
-                  <h5 class="mb-3">Maria Kate</h5>
-                  <p>Photographer</p>
-                  <p class="text-white">
-                     <i class="fas fa-quote-left pe-2"></i>
-                     At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                     praesentium voluptatum deleniti atque corrupti.
-                  </p>
-                  <ul class="list-unstyled d-flex justify-content-center text-warning mb-0">
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="fas fa-star fa-sm"></i></li>
-                     <li><i class="far fa-star fa-sm"></i></li>
-                  </ul>
-               </div>
-            </div>
-         </div>
-      </div>
+       <?php
+       $testimonialCount++;
+       }
+       ?>
    </div>
    <!-- Inner -->
 </div>
+
+
 <div class="container my-8 p-5">
    <h1 align="center" class="primary--text">
       Frequently <span class="warning--text">Asked</span> Questions
@@ -693,68 +533,42 @@
    <p align="center" class="text-black">
       The most reliable source to succeed
    </p>
-   <div role="tablist" class="accordion">
-      <div class="card mb-1">
+   <div id="accordionExample" class="accordion">
+       <?php $faqCount = 1; ?>
+       <?php
+       foreach($faqs as $faq){
+           $show = ($faqCount == 1) ? 'show': '';
+
+           ?>
+      <div class="card mb-1 accordion-item">
          <!----><!---->
-         <header role="tab" class="card-header p-1"><button type="button" class="btn text-white text-left primary btn-info btn-block not-collapsed" aria-expanded="true" aria-controls="accordion-1" style="overflow-anchor: none;">Question 1</button></header>
-         <div id="accordion-1" class="collapse show" role="tabpanel">
-            <div class="card-body">
-               <!----><!---->
-               <p class="card-text">I start opened because <code>visible</code> is <code>true</code></p>
-               <p class="card-text">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                  tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                  wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                  vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                  synth nesciunt you probably haven't heard of them accusamus labore VHS.
-               </p>
-            </div>
-         </div>
-         <!----><!---->
-      </div>
-      <div class="card mb-1">
-         <!----><!---->
-         <header role="tab" class="card-header p-1"><button type="button" class="btn text-white text-left primary btn-info btn-block collapsed" aria-expanded="false" aria-controls="accordion-2" style="overflow-anchor: none;">Question 2</button></header>
-         <div id="accordion-2" class="collapse" role="tabpanel" style="display: none;">
-            <div class="card-body">
-               <!----><!---->
-               <p class="card-text">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                  tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                  wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                  vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                  synth nesciunt you probably haven't heard of them accusamus labore VHS.
-               </p>
-            </div>
-         </div>
+         <header role="tab" class="card-header p-1 accordion-header" id="heading-<?php echo $faq['id'] ?>">
+             <button type="button" class="btn text-white text-left btn-info btn-block not-collapsed accordion-button" aria-expanded="true"  data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $faq['id'] ?>" aria-controls="collapse-<?php echo $faq['id'] ?>"><?php echo $faq['question'] ?></button>
+         </header>
+          <div id="collapse-<?php echo $faq['id'] ?>" class="accordion-collapse collapse <?php echo $show ?>" aria-labelledby="heading-<?php echo $faq['id'] ?>" data-bs-parent="#accordionExample">
+              <div class="card-body accordion-body">
+                  <!----><!---->
+                  <p class="card-text">
+                      <?php echo $faq['answer'] ?>
+                  </p>
+              </div>
+          </div>
          <!----><!---->
       </div>
-      <div class="card mb-1">
-         <!----><!---->
-         <header role="tab" class="card-header p-1"><button type="button" class="btn text-white text-left primary btn-info btn-block collapsed" aria-expanded="false" aria-controls="accordion-3" style="overflow-anchor: none;">Question 3</button></header>
-         <div id="accordion-3" class="collapse" role="tabpanel" style="display: none;">
-            <div class="card-body">
-               <!----><!---->
-               <p class="card-text">
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                  richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
-                  brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-                  tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore
-                  wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher
-                  vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic
-                  synth nesciunt you probably haven't heard of them accusamus labore VHS.
-               </p>
-            </div>
-         </div>
-         <!----><!---->
-      </div>
+           <?php
+           $faqCount++;
+           }
+           ?>
    </div>
 </div>
 @endsection
+
+<style>
+    .accordion-button{
+        background: #248097 !important;
+    }
+    .accordion-button:hover{
+        background-color: #4aa0e6 !important;
+        border-color: #3f9ae5 !important;
+    }
+</style>

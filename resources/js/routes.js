@@ -6,6 +6,10 @@ export default [
     { path: '/products', component: require('./components/product/Products.vue').default },
     { path: '/product/tag', component: require('./components/product/Tag.vue').default },
     { path: '/product/category', component: require('./components/product/Category.vue').default },
-    { path: '/subjects', component: require('./components/Subjects.vue').default },
-    { path: '*', component: require('./components/NotFound.vue').default }
+    // { path: '/subjects', component: require('./components/Subjects.vue').default },
+    { path: '*', component: require('./components/NotFound.vue').default },
+    { path: '/testimonial', component: require('./components/testimonial/Testimonial.vue').default },
+    { path: '/faq', component: require('./components/faq/Faq.vue').default },
+
+
 ];
