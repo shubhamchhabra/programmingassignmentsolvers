@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $testimonials = \App\Models\Testimonial::with('user')->get();
+        $faqs = \App\Models\Faq::all()->take(3);
+        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs]);
     }
 }

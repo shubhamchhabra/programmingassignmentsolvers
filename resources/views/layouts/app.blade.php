@@ -89,7 +89,7 @@ margin: 50px auto;
     font-weight: 400;
     line-height: 1.375rem;
     letter-spacing: 0.0071428571em;
-} 
+}
 .primary--text {
     color: #248097;
     caret-color:#248097;
@@ -119,7 +119,7 @@ border: 2px solid #fff;
 }
 .carousel .testimonial {
 color: #fff;
-position: relative;    
+position: relative;
 background: #9b9b9b;
 padding: 15px;
 margin: 0 0 20px 20px;
@@ -203,14 +203,14 @@ border-radius: 0;
 margin: 1px 5px;
   box-sizing: border-box;
 }
-.carousel-indicators li {	
+.carousel-indicators li {
 background: #e2e2e2;
 border: 4px solid #fff;
 }
 .carousel-indicators li.active {
 color: #fff;
 background: #ff5555;
-border: 5px double;    
+border: 5px double;
 }
 .star-rating li {
 padding: 0 2px;
@@ -346,7 +346,7 @@ background:#c4e83c
         <span>Get connected with us on social networks:</span>
       </div>
       <!-- Left -->
-  
+
       <!-- Right -->
       <div>
         <a href="" class="me-4 link-secondary">
@@ -371,7 +371,7 @@ background:#c4e83c
       <!-- Right -->
     </section>
     <!-- Section: Social media -->
-  
+
     <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
@@ -389,7 +389,7 @@ background:#c4e83c
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -410,7 +410,7 @@ background:#c4e83c
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
@@ -431,7 +431,7 @@ background:#c4e83c
             </p>
           </div>
           <!-- Grid column -->
-  
+
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
@@ -450,7 +450,7 @@ background:#c4e83c
       </div>
     </section>
     <!-- Section: Links  -->
-  
+
     <!-- Copyright -->
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
       © 2022 Copyright:
@@ -460,5 +460,7 @@ background:#c4e83c
   </footer>
   <!-- Footer -->
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
 </body>
 </html>
