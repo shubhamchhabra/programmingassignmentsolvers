@@ -34,6 +34,8 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
     Route::get('category/list', 'CategoryController@list');
     Route::post('product/upload', 'ProductController@upload');
     Route::get('user/list','UserController@list');
+    Route::get('view/order','ViewOrderController@view');
+
 
 
     Route::apiResources([
@@ -42,7 +44,8 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
         'category' => 'CategoryController',
         'tag' => 'TagController',
         'testimonial' => 'TestimonialController',
-        'faq' => 'FaqController'
+        'faq' => 'FaqController',
+        'orders' => 'ViewOrderController'
 
     ]);
 });

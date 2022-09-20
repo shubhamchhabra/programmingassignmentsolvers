@@ -26,6 +26,11 @@ Route::get('home', function () {
     return redirect('/dashboard');
 });
 
+Route::middleware('auth')->group(function(){
+    Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->name('order');
+    Route::post('/order',[\App\Http\Controllers\OrderController::class,'store'])->name('order_submit');
+});
+
  Route::get('/{vue_capture?}', function () {
      return view('home');
  })->where('vue_capture', '[\/\w\.-]*')->middleware('auth');
