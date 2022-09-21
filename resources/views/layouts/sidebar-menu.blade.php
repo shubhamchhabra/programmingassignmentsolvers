@@ -82,7 +82,15 @@
               </router-link>
             </li> --}}
         </ul>
-           
+
+            <li class="nav-item">
+                <router-link to="/orders" class="nav-link">
+                    <i class="nav-icon fas fa-shopping-cart pink"></i>
+                    <p>
+                        Orders
+                    </p>
+                </router-link>
+            </li>
       </li>
 
       @endcan

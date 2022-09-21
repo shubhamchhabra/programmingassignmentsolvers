@@ -333,7 +333,14 @@ background:#c4e83c
               </ul>
             </div>
           </header>
-          <div style="position: relative;"><img lazy-src="/images/header.jpg" max-width="auto" src="/images/header.jpg" style="width: 100%;"> <div data-v-0a987ebd="" class="header-content"><p data-v-0a987ebd="">The Best Programming Online Help For You</p> <button data-v-0a987ebd="" type="button" class="btn order-now-btn v-btn v-btn--is-elevated v-btn--has-bg text-white theme--light v-size--default primary"><span class="v-btn__content">Order now</span></button></div></div>
+          <div style="position: relative;"><img lazy-src="/images/header.jpg" max-width="auto" src="/images/header.jpg" style="width: 100%;">
+              <div data-v-0a987ebd="" class="header-content">
+                  <p data-v-0a987ebd="">The Best Programming Online Help For You</p>
+                  <a href="{{ route('order') }}" data-v-0a987ebd="" type="button" class="btn order-now-btn v-btn v-btn--is-elevated v-btn--has-bg text-white theme--light v-size--default primary">
+                      <span class="v-btn__content">Order now</span>
+                  </a>
+              </div>
+          </div>
         <main class="py-4">
             @yield('content')
         </main>
