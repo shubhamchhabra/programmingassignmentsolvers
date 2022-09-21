@@ -8,7 +8,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>{{ config('app.name', 'Laravel') }}</title>
-  
+
 
   <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
@@ -59,7 +59,7 @@
               <div class="info">
 
                   {{ Auth::user()->name }}
-                  <span class="d-block text-muted">
+                  <span class="d-block text-white">
                     {{ Ucfirst(Auth::user()->type) }}
                   </span>
               </div>
@@ -76,7 +76,7 @@
   {{-- Content Wrapper. Contains page content --}}
   <div class="content-wrapper">
     {{-- Main content --}}
-    
+
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">

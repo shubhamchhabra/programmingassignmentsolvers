@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Route;
 Auth::routes(['verify' => true]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Static Page Route
+Route::get('page/{url}',[\App\Http\Controllers\ShowStaticPagesController::class, 'show'])->name('pages');
 
 Route::get('home', function () {
     return redirect('/dashboard');
@@ -34,3 +36,4 @@ Route::middleware('auth')->group(function(){
  Route::get('/{vue_capture?}', function () {
      return view('home');
  })->where('vue_capture', '[\/\w\.-]*')->middleware('auth');
+

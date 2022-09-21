@@ -24,20 +24,26 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Title</th>
+                                    <th>URL</th>
+                                    <th>Description</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr v-for="faq in faqs.data" :key="faq.id">
+                                <tr v-for="page in pages.data" :key="page.id">
 
-                                    <td>{{faq.id}}</td>
-                                    <td>{{faq.title}}</td>
+                                    <td>{{page.id}}</td>
+                                    <td>{{page.title}}</td>
+                                    <td>{{page.urlTitle}}</td>
+                                    <td v-if="page.description.length<50">{{page.description}}</td>
+                                    <td v-else>{{page.description.substring(0,50)+"..."}}</td>
                                     <td>
 
-                                        <a href="#" @click="updateStaticPage(faq)">
+                                        <a href="#" @click="updateStaticPage(page)">
                                             <i class="fa fa-edit blue"></i>
                                         </a>
                                         /
-                                        <a href="#" @click="deleteStaticPage(faq.id)">
+                                        <a href="#" @click="deleteStaticPage(page.id)">
                                             <i class="fa fa-trash red"></i>
                                         </a>
                                     </td>
@@ -47,7 +53,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <pagination :data="faqs" @pagination-change-page="getResults"></pagination>
+                            <pagination :data="pages" @pagination-change-page="getResults"></pagination>
                         </div>
                     </div>
                     <!-- /.card -->
@@ -74,15 +80,22 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label>Title</label>
-                                    <input class="form-control" name="title" v-model="form.question" :class="{ 'is-invalid': form.errors.has('title') }" />
+                                    <input class="form-control" placeholder="Privacy Policy Page"  name="title" v-model="form.title" :class="{ 'is-invalid': form.errors.has('title') }" />
                                     <has-error :form="form" field="title"></has-error>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Descrtiption</label>
-                                    <textarea v-model="form.answer" type="text" name="descrtiption" rows="4" cols="50"
-                                              class="form-control" :class="{ 'is-invalid': form.errors.has('descrtiption') }"></textarea>
-                                    <has-error :form="form" field="descrtiption"></has-error>
+                                    <label>URL</label>
+                                    <input class="form-control" placeholder="privacy-policy" name="urlTitle" v-model="form.urlTitle" :class="{ 'is-invalid': form.errors.has('urlTitle') }" />
+                                    <p class="text-xs text-muted">Only add the action name Ex: privacy-policy</p>
+                                    <has-error :form="form" field="urlTitle"></has-error>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    <textarea v-model="form.description" type="text" name="description" rows="8" cols="50"
+                                              class="form-control" :class="{ 'is-invalid': form.errors.has('description') }"></textarea>
+                                    <has-error :form="form" field="description"></has-error>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -101,16 +114,17 @@
 
 <script>
 export default {
-    name: "Static Page",
+    name: "Static-Page",
 
     data(){
         return{
             editmode:false,
-            faqs: {},
+            pages: {},
             form: new Form({
                 id: '',
-                question: '',
-                answer: '',
+                title: '',
+                urlTitle: '',
+                description: '',
                 created_at: '',
                 updated_at:''
             }),
@@ -121,12 +135,12 @@ export default {
 
             this.$Progress.start();
 
-            axios.get('api/faq?page=' + page).then(({ data }) => (this.faqs = data.data));
+            axios.get('api/static-pages?page=' + page).then(({ data }) => (this.pages = data.data));
 
             this.$Progress.finish();
         },
         loadStaticPage: function(){
-            axios.get('api/faq').then(({data}) => (this.faqs = data.data));
+            axios.get('api/static-pages').then(({data}) => (this.pages = data.data));
         },
         addStaticPage: function(){
             this.editmode = false;
@@ -136,7 +150,7 @@ export default {
         },
         create: function(){
             this.$Progress.start();
-            this.form.post('api/faq')
+            this.form.post('api/static-pages')
                 .then((response) => {
                     if(response.data.status){
                         $('#addNew').modal('hide');
@@ -164,16 +178,16 @@ export default {
                 })
         },
 
-        updateStaticPage:function(testimonial){
+        updateStaticPage:function(page){
             this.form.clear();
             this.editmode = true;
             this.form.reset();
             $('#addNew').modal('show');
-            this.form.fill(testimonial);
+            this.form.fill(page);
         },
         update: function(){
             this.$Progress.start();
-            this.form.put('api/faq/'+this.form.id)
+            this.form.put('api/static-pages/'+this.form.id)
                 .then((response) => {
                     if(response.data.status){
                         // success
@@ -212,7 +226,7 @@ export default {
 
                 // Send request to the server
                 if (result.value) {
-                    this.form.delete('api/faq/'+id).then(()=>{
+                    this.form.delete('api/static-pages/'+id).then(()=>{
                         Swal.fire(
                             'Deleted!',
                             'Your file has been deleted.',

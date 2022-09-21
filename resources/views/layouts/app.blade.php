@@ -436,6 +436,15 @@ background:#c4e83c
             <p>
               <a href="#!" class="text-reset">Help</a>
             </p>
+                  <?php
+                    foreach($staticPages as $page){
+                     ?>
+                     <p>
+                        <a href="{{route('pages', ['url' => $page->urlTitle])}}" class="text-reset"><?= $page->title ?></a>
+                     </p>
+                  <?php
+                    }
+                  ?>
           </div>
           <!-- Grid column -->
 
