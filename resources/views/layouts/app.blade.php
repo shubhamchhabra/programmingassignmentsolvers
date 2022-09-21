@@ -307,7 +307,7 @@ background:#c4e83c
               <ul class="nav">
                 @if (Route::has('login'))
                     @auth
-                    <li class="nav-item"><a class="nav-link link-dark px-2 text-white" href="{{ url('/home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link link-dark px-2 text-white" href="{{ url('/home') }}">My Account</a></li>
                     @else
                     <li class="nav-item"><a class="nav-link link-dark px-2 text-white" href="{{ route('login') }}">Login</a></li>
 
@@ -320,11 +320,11 @@ background:#c4e83c
             </div>
           </nav>
           <header class="py-3 border-bottom">
-            <div class="container d-flex flex-wrap justify-content-center">
-              <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+            <div class="container d-flex flex-wrap justify-content-center align-items-center">
+              <a href="/" class="d-flex  mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
                 <img src="{{URL::asset('/images/logo.png')}}" width="220px"/>
               </a>
-              <ul class="col-12 col-lg-auto mb-3 mb-lg-0 nav">
+              <ul class="col-12 col-lg-auto mb-3 mb-lg-0 nav justify-content-center">
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Features</a></li>
                 <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Pricing</a></li>

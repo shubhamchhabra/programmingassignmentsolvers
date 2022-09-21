@@ -7,7 +7,7 @@
         
             <div class="card" v-if="$gate.isAdmin()">
               <div class="card-header">
-                <h3 class="card-title">Tag List</h3>
+                <h3 class="card-title">Services List</h3>
 
                 <div class="card-tools">
                   

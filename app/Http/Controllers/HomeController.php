@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,6 +26,7 @@ class HomeController extends Controller
     {
         $testimonials = \App\Models\Testimonial::with('user')->get();
         $faqs = \App\Models\Faq::all()->take(3);
-        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs]);
+        $subjects = Category::all();
+        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs, 'subjects'=> $subjects]);
     }
 }

@@ -9,107 +9,21 @@
          Experts in multiple domains ready to help
       </p>
       <div class="row" style="justify-content: center;">
-         <div class="col-sm-4 col">
+         <?php
+       foreach($subjects as $subject){ ?>
+         <div class="col-sm-4 col mb-4">
             <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
                <div class="v-image v-responsive theme--light" style="height: 150px;padding:0 2rem">
                   <img width="100%" height="100%" src='https://programming-assignment-solvers.com/storage/images/A4fE4lJ8MCdPJfDfKmkw6chXTqPf55aB47jXxdtV.png') />
                   <div class="v-responsive__content" style="width: 1080px;"></div>
                </div>
                <div class="container  mt-4">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">Java</div>
-                  <div class="v-card__text text-white">Our Java codes are clean and can be understood without comments. We still provide simple inline documentation with all Java projects</div>
+                  <div class="v-card__title font-weight-bold warning--text text-center pb-3"><?= $subject['name']; ?></div>
+                  <div class="v-card__text text-white"><?= $subject['description']?></div>
                </div>
             </div>
          </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;padding:0 2rem">
-                  <img width="100%" height="100%" src='https://programming-assignment-solvers.com/storage/images/A4fE4lJ8MCdPJfDfKmkw6chXTqPf55aB47jXxdtV.png') />
-                  <div class="v-responsive__content" style="width: 1080px;"></div>
-               </div>
-               <div class="container  mt-4">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">Java</div>
-                  <div class="v-card__text text-white">Our Java codes are clean and can be understood without comments. We still provide simple inline documentation with all Java projects</div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;padding:0 2rem">
-                  <img width="100%" height="100%" src='https://programming-assignment-solvers.com/storage/images/A4fE4lJ8MCdPJfDfKmkw6chXTqPf55aB47jXxdtV.png') />
-                  <div class="v-responsive__content" style="width: 1080px;"></div>
-               </div>
-               <div class="container mt-4">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">Java</div>
-                  <div class="v-card__text text-white">Our Java codes are clean and can be understood without comments. We still provide simple inline documentation with all Java projects</div>
-               </div>
-            </div>
-         </div>
-         {{-- <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;">
-                  <div class="v-responsive__sizer" style="padding-bottom: 100%;"></div>
-                  <div class="v-image__image v-image__image--contain" style="background-image: url('https://programming-assignment-solvers.com/storage/images/qcBeIO0fKSPGdAODvSrUV8EnWvLmtGBSSIpn2xhO.png'); background-position: center center;"></div>
-                  <div class="v-responsive__content" style="width: 200px;"></div>
-               </div>
-               <div class="container">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">C/C++</div>
-                  <div class="v-card__text text-white">C is a high-level and general-purpose programming language that is ideal for developing firmware or portable applications. Did more than 1000 small and big assignments.</div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;">
-                  <div class="v-responsive__sizer" style="padding-bottom: 100%;"></div>
-                  <div class="v-image__image v-image__image--contain" style="background-image: url('https://programming-assignment-solvers.com/storage/images/humK3rg45LpYobown2dLGwLeYAGQE5FQ6Hmo0TFN.png'); background-position: center center;"></div>
-                  <div class="v-responsive__content" style="width: 640px;"></div>
-               </div>
-               <div class="container">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">Python</div>
-                  <div class="v-card__text text-white">Python is a high-level, interpreted, general-purpose programming language. We have an expert team of developers with critical thinking abilities to assist you with your tasks.</div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;">
-                  <div class="v-responsive__sizer" style="padding-bottom: 69.32%;"></div>
-                  <div class="v-image__image v-image__image--contain" style="background-image: url('https://programming-assignment-solvers.com/storage/images/hLLXii6leOr2S2w1bD9TZCdHoojFmCVZYzMc5gYi.svg'); background-position: center center;"></div>
-                  <div class="v-responsive__content" style="width: 2500px;"></div>
-               </div>
-               <div class="container">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">MySql</div>
-                  <div class="v-card__text text-white">MySQL is an open-source relational database management system. Our master group is productive in aiding you with your SQL queries with all types of programming languages.</div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;">
-                  <div class="v-responsive__sizer" style="padding-bottom: 56.2963%;"></div>
-                  <div class="v-image__image v-image__image--contain" style="background-image: url('https://programming-assignment-solvers.com/storage/images/7Ih13mrl2wywDQCtVaGfuIKHvmvLVq8fxAsaceNS.png'); background-position: center center;"></div>
-                  <div class="v-responsive__content" style="width: 540px;"></div>
-               </div>
-               <div class="container">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">MATLAB</div>
-                  <div class="v-card__text text-white">MATLAB is a proprietary multi-paradigm programming language and numeric computing environment developed by MathWorks. our expert team will assist you with your concerns in Matlab</div>
-               </div>
-            </div>
-         </div>
-         <div class="col-sm-4 col">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;">
-                  <div class="v-responsive__sizer" style="padding-bottom: 98.1481%;"></div>
-                  <div class="v-image__image v-image__image--contain" style="background-image: url('https://programming-assignment-solvers.com/storage/images/JHqgWdMNr3dMq9UFWSBJGcBl1FobLfOQfL6Pmq2m.svg'); background-position: center center;"></div>
-                  <div class="v-responsive__content" style="width: 270px;"></div>
-               </div>
-               <div class="container">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3">R Programming</div>
-                  <div class="v-card__text text-white">We have a team whose R skills are top-notch and who will help you with your R-programming assignments, with expertise at statistical computing, data analysis, and machine learning</div>
-               </div>
-            </div>
-         </div> --}}
+         <?php } ?>
       </div>
    </div>
 
@@ -335,7 +249,7 @@
    <h1 align="center" class="text-white">
       How <span class="warning--text">it</span> works?
    </h1>
-   <p align="center" class="text-black">
+   <p align="center" class="text-white">
       The most reliable source to succeed
    </p>
    <div class="col-md-12">
