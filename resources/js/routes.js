@@ -10,6 +10,7 @@ export default [
     { path: '*', component: require('./components/NotFound.vue').default },
     { path: '/testimonial', component: require('./components/testimonial/Testimonial.vue').default },
     { path: '/faq', component: require('./components/faq/Faq.vue').default },
+    { path: '/static-pages', component: require('./components/static-pages/StaticPages.vue').default },
 
 
 ];
