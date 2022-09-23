@@ -55,7 +55,7 @@
               </p>
             </router-link>
           </li>
-    
+
           <li class="nav-item">
             <router-link to="/testimonial" class="nav-link">
                 <i class="nav-icon fas fa-star white"></i>
@@ -73,14 +73,14 @@
           </router-link>
       </li>
 
-            {{-- <li class="nav-item">
-              <router-link to="/developer" class="nav-link">
-                  <i class="nav-icon fas fa-cogs white"></i>
+             <li class="nav-item">
+              <router-link to="/posts" class="nav-link">
+                  <i class="nav-icon fa fa-blog white"></i>
                   <p>
-                      Developer
+                      Blog
                   </p>
               </router-link>
-            </li> --}}
+            </li>
         </ul>
 
             <li class="nav-item">

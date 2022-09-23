@@ -9,7 +9,6 @@ use Cviebrock\EloquentSluggable\Sluggable;
 class Post extends Model
 {
     use HasFactory;
-    use Sluggable;
 
     protected $fillable = ['title', 'slug', 'description', 'image_path', 'user_id'];
 

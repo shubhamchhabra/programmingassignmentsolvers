@@ -35,7 +35,8 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
     Route::post('product/upload', 'ProductController@upload');
     Route::get('user/list','UserController@list');
     Route::get('view/order','ViewOrderController@view');
-
+    Route::post('post/create','PostController@store');
+    Route::get('post/edit','PostController@edit');
 
 
     Route::apiResources([
@@ -46,7 +47,8 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
         'testimonial' => 'TestimonialController',
         'faq' => 'FaqController',
         'orders' => 'ViewOrderController',
-        'static-pages' => 'StaticPagesController'
+        'static-pages' => 'StaticPagesController',
+        'post' => 'PostController'
 
     ]);
 });
