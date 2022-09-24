@@ -1,22 +1,40 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-4/5 m-auto text-left">
-    <div class="py-15">
-        <h1 class="text-6xl">
-            {{ $post->title }}
-        </h1>
-    </div>
-</div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
 
-<div class="w-4/5 m-auto pt-20">
-    <span class="text-gray-500">
-        By <span class="font-bold italic text-gray-800">{{ $post->user->name }}</span>, Created on {{ date('jS M Y', strtotime($post->updated_at)) }}
-    </span>
+                <div class="col-12">
 
-    <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
-        {{ $post->description }}
-    </p>
-</div>
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-tools">
 
-@endsection 
+                            </div>
+                        </div>
+
+                        <div class="card w-75 mx-auto my-4" style="border:none;" >
+                            <img src="{{URL::asset('/post/'.$post->image_path)}}" class="card-img-top" alt="..." style="max-height: 400px;">
+                            <div class="card-body pb-0">
+                                <p class="card-text">{!! $post->description !!}</p>
+                                <div class="pt-0 mb-3" style="display: flex; flex-direction: row; align-items: center;">
+                                    <img class="d-block" src="https://cdn-icons-png.flaticon.com/128/945/945226.png?uid=R76116723&ga=GA1.2.701253051.1658765313" height="70px" alt="">
+                                    <span class="ml-3">
+                                        <p class="text-sm mb-0 mt-2">{{$post->user->name}}</p>
+                                        <p class="text-sm mt-1">{{ $post->updated_at->format('Y-m-d')  }}</p>
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+@endsection

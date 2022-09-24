@@ -13,6 +13,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -32,6 +33,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/order', [\App\Http\Controllers\OrderController::class, 'index'])->name('order');
     Route::post('/order',[\App\Http\Controllers\OrderController::class,'store'])->name('order_submit');
 });
+
+Route::get('blog/{slug}', [\App\Http\Controllers\BlogController::class,'view'])->name('blog.view');
+
 
  Route::get('/{vue_capture?}', function () {
      return view('home');

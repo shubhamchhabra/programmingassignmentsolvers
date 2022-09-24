@@ -475,6 +475,38 @@
            ?>
    </div>
 </div>
+
+<!----Blog post---->
+<div class="container my-8 p-5">
+   <h1 align="center" class="primary--text">
+       Our Latest<span class="warning--text"> Blogs</span>
+   </h1>
+   <p align="center" class="text-black">
+      The most reliable source to succeed
+   </p>
+
+    <div class="row mt-5">
+        <?php
+          foreach($posts as $post){
+        ?>
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem; max-height: 500px;">
+                <img src="{{URL::asset('/post/'.$post->image_path)}}"  class="card-img-top p-2" alt="..." style="max-height: 200px;">
+                <div class="card-body pt-0 row ">
+                    <h2 class="card-title text-md mt-1">{{ $post->title }}</h2>
+                    <div class="pl-2">
+                        <a href="{{route('blog.view',['slug' => $post->slug])}}" role="button" class="btn btn-primary text-center w-50 my-2">Read now!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+         }
+        ?>
+    </div>
+
+    {!! $posts->links() !!}
+</div>
 @endsection
 
 <style>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,6 +29,7 @@ class HomeController extends Controller
         $testimonials = \App\Models\Testimonial::with('user')->get();
         $faqs = \App\Models\Faq::all()->take(3);
         $subjects = Category::all();
-        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs, 'subjects'=> $subjects]);
+        $posts = Post::with('user')->orderByDesc('id')->paginate(3);
+        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs, 'subjects'=> $subjects, 'posts'=> $posts]);
     }
 }

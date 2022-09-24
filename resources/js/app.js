@@ -12,6 +12,10 @@ import moment from 'moment';
 import { Form, HasError, AlertError } from 'vform';
 window.Form = Form;
 
+
+import CKEditor from '@ckeditor/ckeditor5-vue2';
+Vue.use(CKEditor);
+
 import Gate from "./Gate";
 Vue.prototype.$gate = new Gate(window.user);
 
