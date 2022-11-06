@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class OrderController extends SendEmailController
 {
@@ -30,10 +32,21 @@ class OrderController extends SendEmailController
             ['no_pages.required' => 'Number of pages is required']
         );
 
+        $userExist = User::where('email',$request->email)->get();
+        $userId ='';
+        if(!Auth::check() && $userExist->count() === 0){
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->email),
+                'type' => 'user',
+            ]);
+            $userId = $user['id'];
+        }
         $order = new  Order();
         $order->name = $request->name;
         $order->email = $request->email;
-        $order->user_id = Auth::user()->id;
+        $order->user_id = Auth::check() ? Auth::user()->id : $userId;
         $order->status = ORDER::ORDER_SUBMITTED;
         $order->subject = $request->subject;
         $order->subject_title = $request->subject_title;

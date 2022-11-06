@@ -3,22 +3,22 @@
 namespace App\Http\Controllers\API\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tag;
+use App\Models\Service;
 use Illuminate\Http\Request;
 
 class TagController extends BaseController
 {
-    protected $tag = '';
+    protected $service = '';
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct(Tag $tag)
+    public function __construct(Service $service)
     {
         $this->middleware('auth:api');
-        $this->tag = $tag;
+        $this->service = $service;
     }
 
     /**
@@ -28,7 +28,7 @@ class TagController extends BaseController
      */
     public function index()
     {
-        $tags = $this->tag->latest()->paginate(10);
+        $tags = $this->service->latest()->paginate(10);
 
         return $this->sendResponse($tags, 'Tags list');
     }
@@ -40,7 +40,7 @@ class TagController extends BaseController
      */
     public function list()
     {
-        $tags = $this->tag->get(['name', 'id']);
+        $tags = $this->service->get(['name', 'id']);
 
         return $this->sendResponse($tags, 'Tags list');
     }
@@ -57,11 +57,11 @@ class TagController extends BaseController
      */
     public function store(Request $request)
     {
-        $tag = $this->tag->create([
+        $service = $this->service->create([
             'name' => $request->get('name')
         ]);
 
-        return $this->sendResponse($tag, 'Tag Created Successfully');
+        return $this->sendResponse($service, 'Service Created Successfully');
     }
 
     /**
@@ -74,10 +74,10 @@ class TagController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        $tag = $this->tag->findOrFail($id);
+        $service = $this->service->findOrFail($id);
 
-        $tag->update($request->all());
+        $service->update($request->all());
 
-        return $this->sendResponse($tag, 'Tag Information has been updated');
+        return $this->sendResponse($service, 'Service Information has been updated');
     }
 }

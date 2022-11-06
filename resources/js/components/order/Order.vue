@@ -4,8 +4,8 @@
             <div class="row">
 
                 <div class="col-12">
-
-                    <div class="card" v-if="$gate.isAdmin()">
+                    <!-- v-if="$gate.isAdmin()" -->
+                    <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Orders</h3>
 
@@ -38,7 +38,7 @@
                                         </a>
                                         /
                                         <a href="#" @click="">
-                                            <i class="fa fa-arrow-right red"></i>
+                                            <i class="fa fa-trash red"></i>
                                         </a>
                                     </td>
                                 </tr>

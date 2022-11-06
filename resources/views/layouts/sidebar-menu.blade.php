@@ -1,13 +1,21 @@
 <nav class="mt-2">
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <router-link to="/dashboard" class="nav-link">
           <i class="nav-icon fas fa-tachometer-alt white"></i>
           <p>
             Dashboard
           </p>
         </router-link>
-      </li>
+      </li> --}}
+      <li class="nav-item">
+        <router-link to="/orders" class="nav-link">
+            <i class="nav-icon fas fa-shopping-cart white"></i>
+            <p>
+                Orders
+            </p>
+        </router-link>
+    </li>
 
       @can('isAdmin')
         <li class="nav-item">
@@ -16,11 +24,6 @@
             <p>Users</p>
           </router-link>
         </li>
-      @endcan
-
-
-
-      @can('isAdmin')
       <li class="nav-item has-treeview">
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-cog white"></i>
@@ -33,14 +36,14 @@
 
           <li class="nav-item">
             <router-link to="/product/category" class="nav-link">
-              <i class="nav-icon fas fa-list-ol white"></i>
+              <i class="nav-icon fas fa-dollar-sign white"></i>
               <p>
-                Subjects
+                Pricing
               </p>
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/product/tag" class="nav-link">
+            <router-link to="/services" class="nav-link">
               <i class="nav-icon fas fa-file-alt white"></i>
               <p>
                 Services
@@ -82,15 +85,6 @@
               </router-link>
             </li>
         </ul>
-
-            <li class="nav-item">
-                <router-link to="/orders" class="nav-link">
-                    <i class="nav-icon fas fa-shopping-cart pink"></i>
-                    <p>
-                        Orders
-                    </p>
-                </router-link>
-            </li>
       </li>
 
       @endcan

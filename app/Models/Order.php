@@ -17,8 +17,8 @@ class Order extends Model
     CONST GRADUATE = 'Graduate';
     CONST MASTERS = 'Masters';
     CONST PHD = 'PhD';
-    CONST ORDER_SUBMITTED = 'Order Submitted';
-    CONST QUOTE_GIVEN = 'Quote Given';
+    CONST ORDER_SUBMITTED = 'Order Recieved';
+    CONST QUOTE_GIVEN = 'Order Processed';
     CONST ORDER_COMPLETED = 'Order Completed';
 
     protected $fillable = [

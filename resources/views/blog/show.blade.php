@@ -7,14 +7,8 @@
 
                 <div class="col-12">
 
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-tools">
-
-                            </div>
-                        </div>
-
-                        <div class="card w-75 mx-auto my-4" style="border:none;" >
+                 
+                 <div class="my-4" style="border:none;" >
                             <img src="{{URL::asset('/post/'.$post->image_path)}}" class="card-img-top" alt="..." style="max-height: 400px;">
                             <div class="card-body pb-0">
                                 <p class="card-text">{!! $post->description !!}</p>
@@ -27,9 +21,8 @@
                                 </div>
                             </div>
 
-                        </div>
-                    </div>
-                    <!-- /.card -->
+                </div>
+                    
                 </div>
             </div>
 

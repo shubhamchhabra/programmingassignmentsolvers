@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,8 +29,9 @@ class HomeController extends Controller
     {
         $testimonials = \App\Models\Testimonial::with('user')->get();
         $faqs = \App\Models\Faq::all()->take(3);
-        $subjects = Category::all();
+        $subjects = Service::where('is_featured',1)->get();
         $posts = Post::with('user')->orderByDesc('id')->paginate(3);
-        return view('welcome',['testimonials' => $testimonials, 'faqs' => $faqs, 'subjects'=> $subjects, 'posts'=> $posts]);
+        $services = Service::all();
+        return view('welcome',['services' => $services,'testimonials' => $testimonials, 'faqs' => $faqs, 'subjects'=> $subjects, 'posts'=> $posts]);
     }
 }

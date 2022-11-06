@@ -1,5 +1,7 @@
 <?php
 
+use App\Providers\SubjectServiceProvider;
+
 return [
 
     /*
@@ -179,6 +181,7 @@ return [
 
         App\Providers\ProductRepositoryServiceProvider::class,
         App\Providers\StaticPageServiceProvider::class,
+        SubjectServiceProvider::class,
 
     ],
 

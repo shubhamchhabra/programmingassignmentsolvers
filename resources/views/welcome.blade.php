@@ -1,25 +1,25 @@
 @extends('layouts.app')
 @section('content')
-<div class="p-5 layout align-center column justify-center">
-   <div class="container my-8">
-      <h1 align="center" class="primary--text">
+<div class="primary p-5 layout align-center column justify-center">
+   <div class="">
+      <h1 align="center" class="text-white">
          Our <span class="warning--text">Popular</span> Subjects
       </h1>
-      <p align="center" class="text-black">
+      <p align="center" class="text-white">
          Experts in multiple domains ready to help
       </p>
       <div class="row" style="justify-content: center;">
          <?php
        foreach($subjects as $subject){ ?>
          <div class="col-sm-4 col mb-4">
-            <div class="rounded-lg primary p-4 v-card v-sheet theme--light">
-               <div class="v-image v-responsive theme--light" style="height: 150px;padding:0 2rem">
-                  <img width="100%" height="100%" src='https://programming-assignment-solvers.com/storage/images/A4fE4lJ8MCdPJfDfKmkw6chXTqPf55aB47jXxdtV.png') />
+            <div class="rounded-lg primary p-4 v-card v-sheet theme--light border border-white">
+               <div class="v-image v-responsive theme--light" style="height: 150px;padding:0 2rem;text-align:center">
+                  <img width="auto" height="100%" src={{URL::asset('/service/'.$subject->image_path)}} />
                   <div class="v-responsive__content" style="width: 1080px;"></div>
                </div>
                <div class="container  mt-4">
-                  <div class="v-card__title font-weight-bold warning--text text-center pb-3"><?= $subject['name']; ?></div>
-                  <div class="v-card__text text-white"><?= $subject['description']?></div>
+                  <a href="{{route('services.view',['slug' => $subject['slug']])}}"><div class="v-card__title font-weight-bold warning--text text-center pb-3"><?= $subject['title']; ?></div></a>
+                  <div class="v-card__text text-white"><?= Str::limit($subject['description'],150)?></div>
                </div>
             </div>
          </div>
@@ -195,7 +195,7 @@
       </div>
    </div> --}}
 </div>
-<div class="container p-5">
+<section class="container p-5">
    <h1 align="center" class="primary--text">
       Why <span class="warning--text">Choose</span> Us
    </h1>
@@ -203,7 +203,7 @@
       The most reliable source to succeed
    </p>
    <div class="row">
-      <div class="col-sm-3 col-12">
+      <div class="col-sm-3 col-12 mb-3">
          <div class="rounded theme--light secondary p-3">
             <div >
                <div class="fw-bold text-white">
@@ -213,7 +213,7 @@
             </div>
          </div>
       </div>
-      <div class="col-sm-3 col-12">
+      <div class="col-sm-3 col-12 mb-3">
          <div class="rounded theme--light secondary p-3">
             <div >
                <div class="fw-bold text-white">
@@ -223,7 +223,7 @@
             </div>
          </div>
       </div>
-      <div class="col-sm-3 col-12">
+      <div class="col-sm-3 col-12 mb-3">
          <div class="rounded theme--light secondary p-3">
             <div >
                <div class="fw-bold text-white">
@@ -233,7 +233,7 @@
             </div>
          </div>
       </div>
-      <div class="col-sm-3 col-12">
+      <div class="col-sm-3 col-12 mb-3">
          <div class="rounded theme--light secondary p-3">
             <div >
                <div class="fw-bold text-white">
@@ -244,8 +244,10 @@
          </div>
       </div>
    </div>
-</div>
-<div class="primary p-5 w-100">
+</section>
+
+{{-- How it works section --}}
+<section class="primary p-5 w-100" id="howItWorks">
    <h1 align="center" class="text-white">
       How <span class="warning--text">it</span> works?
    </h1>
@@ -313,8 +315,10 @@
          </div>
       </div>
    </div>
-</div>
-<div class="container p-5">
+</section>
+
+{{-- Pricing section --}}
+<section class="container p-5" id="pricing">
    <h1 align="center" class="primary--text">
       Pricing
    </h1>
@@ -375,9 +379,10 @@
       </div>
    </div>
 </div>
-</div>
-<!-- Carousel wrapper -->
-<div id="carouselMultiItemExample" class="m-0 primary p-5 carousel slide carousel-dark text-center" data-bs-ride="carousel">
+</section>
+
+<!-- Testimonial section -->
+<section id="testimonial" class="m-0 primary p-5 carousel slide carousel-dark text-center" data-bs-ride="carousel">
    <!-- Controls -->
    <h1 align="center" class="text-white">
       Testimonial
@@ -385,7 +390,7 @@
    <p align="center" class="warning--text">
       The most reliable source to succeed
    </p>
-   <div class="d-flex justify-content-center mb-4">
+   {{-- <div class="d-flex justify-content-center mb-4">
       <button class="carousel-control-prev position-relative" type="button"
          data-bs-target="#carouselMultiItemExample" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -396,7 +401,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
       </button>
-   </div>
+   </div> --}}
    <!-- Inner -->
    <div class="carousel-inner py-4">
       <!-- Single item -->
@@ -437,10 +442,10 @@
        ?>
    </div>
    <!-- Inner -->
-</div>
+</section>
 
-
-<div class="container my-8 p-5">
+{{-- Faq Section --}}
+<section class="container my-8 p-5" id="faq">
    <h1 align="center" class="primary--text">
       Frequently <span class="warning--text">Asked</span> Questions
    </h1>
@@ -474,12 +479,30 @@
            }
            ?>
    </div>
-</div>
+</section>
 
-<!----Blog post---->
-<div class="container my-8 p-5">
+
+{{-- Services Section --}}
+<section class="p-5 primary" id="services">
+   <h1 align="center" class="text-white">
+      Our Services
+   </h1>
+   <p align="center" class="warning--text">
+      The most reliable source to succeed
+   </p>
+   <div class="container">
+     <ul class="services-links__list list--clean">
+       <?php foreach($services as $service){?>
+       <li><a class="text-white" href="/buy.html"><?=$service['title']?></a></li>
+         <?php } ?>
+     </ul>
+   </div>
+ </section>
+
+<!----Blog Section---->
+<section class="container my-8 p-5" id="blog">
    <h1 align="center" class="primary--text">
-       Our Latest<span class="warning--text"> Blogs</span>
+       Our <span class="warning--text"> Latest</span> Blogs
    </h1>
    <p align="center" class="text-black">
       The most reliable source to succeed
@@ -506,7 +529,7 @@
     </div>
 
     {!! $posts->links() !!}
-</div>
+</section>
 @endsection
 
 <style>

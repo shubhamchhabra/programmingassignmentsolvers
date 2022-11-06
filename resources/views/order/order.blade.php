@@ -2,7 +2,9 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <h3 class="text-center pt-4">Place your order now</h3> 
+      
+            <div class="col-md-12 p-5">
                 <div class="card">
                     <div class="card-header">
                         <div class="row align-items-center">
@@ -43,7 +45,14 @@
 
                                 <div class="col-md-4">
                                     <label for="email" class="form-label ml-1">{{ __('E-Mail Address') }} <span class="text-danger">*</span></label>
+                                    @if (Auth::check() && Auth::user()->isAdmin())
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="<?= \Illuminate\Support\Facades\Auth::user()->email ?>" autocomplete="email" autofocus>
+                                    @else
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="" autocomplete="email" autofocus>
+                                       
+                                    @endif
+                                    {{-- @can('isUser') --}}
+                                    {{-- @endcan --}}
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">

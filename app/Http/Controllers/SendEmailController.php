@@ -13,7 +13,7 @@ class SendEmailController extends Controller
     public function sendEmailToAdmin($id){
         $order = Order::find($id);
 
-        Mail::to('ankit4gaurav@gmail.com')->send(new UserOrder($order));
+        Mail::to('shubhamchhabra222@gmail.com')->send(new UserOrder($order));
 
         if (Mail::failures()) {
             return ['status' => false, 'message' => 'Sorry! Please try again latter'];

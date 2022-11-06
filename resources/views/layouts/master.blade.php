@@ -41,21 +41,15 @@
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background:#248097">
-    <!-- Brand Logo -->
-    <router-link to="/dashboard" class="brand-link" style="height: 65px">
-      <img src="{{ asset('/images/logo.png') }}" alt="The Logo" class="brand-image elevation-3"
-           style="opacity: .8">
-      {{-- <span class="brand-text font-weight-light">{{ config('app.name', '') }}</span> --}}
-    </router-link>
-
+  
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
         <router-link to="/profile">
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-              <div class="image">
+              {{-- <div class="image">
                 <img src="{{ auth()->user()->photo }}" class="img-circle elevation-2" alt="User Image">
-              </div>
+              </div> --}}
               <div class="info">
 
                   {{ Auth::user()->name }}

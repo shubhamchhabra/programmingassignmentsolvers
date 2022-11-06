@@ -1,10 +1,12 @@
 export default [
-    { path: '/dashboard', component: require('./components/Dashboard.vue').default },
+    // { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/profile', component: require('./components/Profile.vue').default },
     { path: '/developer', component: require('./components/Developer.vue').default },
     { path: '/users', component: require('./components/Users.vue').default },
     { path: '/products', component: require('./components/product/Products.vue').default },
-    { path: '/product/tag', component: require('./components/product/Tag.vue').default },
+    { path: '/services', component: require('./components/service/Index').default },
+    { path: '/service/create', component: require('./components/service/Create').default },
+    { path: '/service/edit', component: require('./components/service/Update').default },
     { path: '/product/category', component: require('./components/product/Category.vue').default },
     { path: '*', component: require('./components/NotFound.vue').default },
     { path: '/testimonial', component: require('./components/testimonial/Testimonial.vue').default },
@@ -16,7 +18,4 @@ export default [
     { path: '/post/create', component: require('./components/post/Create').default },
     { path: '/post/edit', component: require('./components/post/Update').default },
     { path: '/post/view', component: require('./components/post/View').default },
-
-
-
 ];
