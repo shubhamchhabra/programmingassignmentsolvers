@@ -37,7 +37,7 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
     Route::get('view/order','ViewOrderController@view');
     Route::post('post/create','PostController@store');
     Route::post('service/create','ServiceController@store');
-    Route::post('service/edit','ServiceController@edit');
+    Route::get('service/edit','ServiceController@edit');
     Route::get('post/edit','PostController@edit');
 
 
