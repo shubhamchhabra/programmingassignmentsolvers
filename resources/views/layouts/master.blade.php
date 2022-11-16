@@ -10,6 +10,7 @@
   <title>{{ config('app.name', 'Laravel') }}</title>
 
 
+  <link rel="icon" type="image/png" href="{{URL::asset('/images/favicon.png')}}" />
   <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -101,7 +102,7 @@
   {{-- Main Footer --}}
   <footer class="main-footer">
     {{-- Default to the left --}}
-    <strong>Copyright &copy; 2022-23 <a href="#">Shubham Chhabra</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2022-23 <a href="https://www.linkedin.com/in/shubham-chhabra-832b19b0/">Shubham Chhabra</a>.</strong> All rights reserved.
   </footer>
 </div>
 {{-- ./wrapper --}}

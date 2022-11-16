@@ -329,7 +329,8 @@
       <div class="col">
          <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-               <h4 class="my-0 fw-normal">Free</h4>
+               <h4 class="my-0 fw-normal">Executable
+                  Code</h4>
             </div>
             <div class="card-body">
                <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
@@ -339,14 +340,14 @@
                   <li>Email support</li>
                   <li>Help center access</li>
                </ul>
-               <button type="button" class="w-100 btn btn-lg primary text-white">Sign up for free</button>
+               <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
             </div>
          </div>
       </div>
       <div class="col">
          <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-               <h4 class="my-0 fw-normal">Pro</h4>
+               <h4 class="my-0 fw-normal">Well-Commented Code</h4>
             </div>
             <div class="card-body">
                <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
@@ -356,14 +357,14 @@
                   <li>Priority email support</li>
                   <li>Help center access</li>
                </ul>
-               <button type="button" class="w-100 btn btn-lg primary text-white">Get started</button>
+               <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
             </div>
          </div>
       </div>
       <div class="col">
          <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3 text-white primary">
-               <h4 class="my-0 fw-normal">Enterprise</h4>
+               <h4 class="my-0 fw-normal">Well-Commented Code& Report</h4>
             </div>
             <div class="card-body">
                <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
@@ -373,7 +374,7 @@
                   <li>Phone and email support</li>
                   <li>Help center access</li>
                </ul>
-               <button type="button" class="w-100 btn btn-lg primary text-white">Contact us</button>
+               <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
             </div>
          </div>
       </div>
