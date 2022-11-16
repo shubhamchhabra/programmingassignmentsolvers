@@ -22,7 +22,7 @@ class Order extends Model
     CONST ORDER_COMPLETED = 'Order Completed';
 
     protected $fillable = [
-        'name', 'email', 'subject', 'subject_title', 'deadline', 'timezone', 'ref_code', 'requirement', 'academic', 'no_pages', 'assignment_file', 'description'
+        'name', 'email', 'subject', 'subject_title', 'deadline', 'timezone', 'number', 'ref_code', 'requirement', 'academic', 'no_pages', 'assignment_file', 'description'
     ];
 
     public function user(){

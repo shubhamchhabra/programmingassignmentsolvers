@@ -27,6 +27,7 @@ class OrderController extends SendEmailController
             'subject' => 'required',
             'deadline' => 'required',
             'no_pages' => 'required',
+            'number' => 'required',
             'assignment_file' => 'mimes:pdf,png,jpg,jpeg'
         ],
             ['no_pages.required' => 'Number of pages is required']
@@ -55,6 +56,7 @@ class OrderController extends SendEmailController
         $order->ref_code = $request->ref_code;
         $order->requirement = $request->requirement;
         $order->academic = $request->academic;
+        $order->number = $request->number;
         $order->no_pages = $request->no_pages;
         $order->description = $request->description;
 

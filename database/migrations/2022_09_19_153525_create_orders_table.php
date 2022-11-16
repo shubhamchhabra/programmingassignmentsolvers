@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->string('ref_code')->nullable();
             $table->string('requirement')->nullable();
             $table->string('academic')->nullable();
+            $table->string('number');
             $table->integer('no_pages');
             $table->string('assignment_file')->nullable();
             $table->longText('description')->nullable();

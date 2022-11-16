@@ -189,6 +189,16 @@
                                     @enderror
                                 </div>
 
+                                <div class="col-md-4">
+                                    <label for="number" class="form-label ml-1">{{ __('Enter Number') }} <span class="text-danger">*</span></label>
+                                    <input id="number" type="text" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}"  autofocus>
+
+                                    @error('number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
                             </div>
 
                             <div class="form-group row">
