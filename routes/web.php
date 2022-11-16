@@ -35,6 +35,11 @@ Route::post('/order',[\App\Http\Controllers\OrderController::class,'store'])->na
 Route::get('blog/{slug}', [\App\Http\Controllers\BlogController::class,'view'])->name('blog.view');
 Route::get('services/{slug}', [\App\Http\Controllers\ServicesController::class,'view'])->name('services.view');
 
+Route::get('/contact',[\App\Http\Controllers\ContactController::class,'index'])->name('contact');
+Route::post('/contact',[\App\Http\Controllers\ContactController::class,'store'])->name('contact_submit');
+
+
+
 Route::get('/clear-cache', function() {
     $exitCode = Artisan::call('cache:clear');
     // return what you want

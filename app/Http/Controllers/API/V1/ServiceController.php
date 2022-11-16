@@ -18,7 +18,7 @@ class ServiceController extends BaseController
     public function index(){
         //Get the all services
         $services = Service::latest()->paginate(10);
-        
+
         return $this->sendResponse($services, 'services');
     }
     public function store(Request $request){
@@ -55,7 +55,6 @@ class ServiceController extends BaseController
     public function edit(){
         $id = $_GET['id'];
         $service = Service::find($id);
-        print_r($service);die;
         return json_encode($service);
     }
 
@@ -88,7 +87,9 @@ class ServiceController extends BaseController
                 $fileName = time().'.'.$file->getClientOriginalExtension();
                 if($file->move(public_path('service'), $fileName)){
                     //Remove the old image from public folder
-                    unlink(public_path('service/'.$service->image_path));
+                    if(file_exists(public_path('service/'.$service->image_path))){
+                        unlink(public_path('service/'.$service->image_path));
+                    }
                     $service->image_path = $fileName;
                 }
 
