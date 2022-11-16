@@ -493,7 +493,7 @@
    <div class="container">
      <ul class="services-links__list list--clean">
        <?php foreach($services as $service){?>
-       <li><a class="text-white" href="/buy.html"><?=$service['title']?></a></li>
+       <li><a class="text-white" href="/services/"$service['slug']><?=$service['title']?></a></li>
          <?php } ?>
      </ul>
    </div>
