@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" src="{{URL::asset('/images/favicon.png')}}" />
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -305,11 +305,11 @@ ul.services-links__list.list--clean li {
               <ul class="nav">
                 @if (Route::has('login'))
                     @auth
-                    
+
                     <li class="nav-item"><a class="nav-link link-dark px-2 text-white" href="{{ url('/orders') }}">My Account</a></li>
                     @else
                     <li class="nav-item"><a class="nav-link link-dark px-2 text-white" href="{{ route('order') }}">Order Now</a></li>
-       
+
                     <li class="nav-item align-self-center"><a class="nav-link link-dark px-2 text-white" href="{{ route('login') }}"><i class="fa fa-user"></i></a></li>
 
                         @if (Route::has('register'))
@@ -332,6 +332,8 @@ ul.services-links__list.list--clean li {
                 <li class="nav-item"><a href="/#faq" class="nav-link link-dark px-2">FAQs</a></li>
                 <li class="nav-item"><a href="/#services" class="nav-link link-dark px-2">Services</a></li>
                 <li class="nav-item"><a href="/#blog" class="nav-link link-dark px-2">Blog</a></li>
+                  <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link link-dark px-2">Contact</a></li>
+
               </ul>
             </div>
           </header>

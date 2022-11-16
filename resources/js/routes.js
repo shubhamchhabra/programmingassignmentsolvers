@@ -7,6 +7,7 @@ export default [
     { path: '/services', component: require('./components/service/Index').default },
     { path: '/service/create', component: require('./components/service/Create').default },
     { path: '/service/edit', component: require('./components/service/Update').default },
+    { path: '/service/view', component: require('./components/service/View').default },
     { path: '/product/category', component: require('./components/product/Category.vue').default },
     { path: '*', component: require('./components/NotFound.vue').default },
     { path: '/testimonial', component: require('./components/testimonial/Testimonial.vue').default },
