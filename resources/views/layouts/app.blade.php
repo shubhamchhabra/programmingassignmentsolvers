@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link rel="icon" type="image/png" src="{{URL::asset('/images/favicon.png')}}" />
+    <link rel="icon" type="image/png" href="{{URL::asset('/images/favicon.png')}}" />
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
