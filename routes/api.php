@@ -51,7 +51,8 @@ Route::namespace('App\\Http\\Controllers\\API\V1')->group(function () {
         'orders' => 'ViewOrderController',
         'static-pages' => 'StaticPagesController',
         'post' => 'PostController',
-        'service'=>'ServiceController'
+        'service'=>'ServiceController',
+        'price' => 'PriceController'
 
     ]);
 });

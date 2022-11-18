@@ -19,4 +19,6 @@ export default [
     { path: '/post/create', component: require('./components/post/Create').default },
     { path: '/post/edit', component: require('./components/post/Update').default },
     { path: '/post/view', component: require('./components/post/View').default },
+    { path: '/prices', component: require('./components/pricing/Pricing.vue').default },
+
 ];

@@ -35,7 +35,7 @@
         <ul class="nav nav-treeview">
 
           <li class="nav-item">
-            <router-link to="/product/category" class="nav-link">
+            <router-link to="/prices" class="nav-link">
               <i class="nav-icon fas fa-dollar-sign white"></i>
               <p>
                 Pricing
