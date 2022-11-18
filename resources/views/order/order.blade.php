@@ -2,8 +2,8 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <h3 class="text-center pt-4">Place your order now</h3> 
-      
+            <h3 class="text-center pt-4">Place your order now</h3>
+
             <div class="col-md-12 p-5">
                 <div class="card">
                     <div class="card-header">
@@ -49,7 +49,7 @@
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="<?= \Illuminate\Support\Facades\Auth::user()->email ?>" autocomplete="email" autofocus>
                                     @else
                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="" autocomplete="email" autofocus>
-                                       
+
                                     @endif
                                     {{-- @can('isUser') --}}
                                     {{-- @endcan --}}
@@ -190,7 +190,7 @@
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label for="number" class="form-label ml-1">{{ __('Enter Number') }} <span class="text-danger">*</span></label>
+                                    <label for="number" class="form-label ml-1">{{ __('Contact Number') }} <span class="text-danger">*</span></label>
                                     <input id="number" type="text" class="form-control @error('number') is-invalid @enderror" name="number" value="{{ old('number') }}"  autofocus>
 
                                     @error('number')
