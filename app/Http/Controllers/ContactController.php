@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Contact;
 use App\Rules\Recaptcha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController
 {
@@ -22,18 +23,19 @@ class ContactController
            'g-recaptcha-response' => ['required', new Recaptcha()]
        ]);
 
-       try {
-           $contact = new Contact();
-           $contact->name = $request->name;
-           $contact->email = $request->email;
-           $contact->subject = $request->subject;
-           $contact->message = $request->message;
+           $contactDetails = [
+               'name' => $request->name,
+               'email' => $request->email,
+               'subject' => $request->subject,
+               'message' => $request->message
+           ];
 
-           if($contact->save()){
+           Mail::to('ankit4gaurav@gmail.com')->send(new \App\Mail\Contact($contactDetails));
+
+           if(Mail::failures()){
+               return back()->with('error', 'Something went wrong, please try again later!');
+           }else{
                return back()->with('success', 'Thank you, we will connect with you soon!');
            }
-       }catch (\Exception $e){
-           return back()->with('error', 'Something went wrong, please try again later!');
-       }
    }
 }
