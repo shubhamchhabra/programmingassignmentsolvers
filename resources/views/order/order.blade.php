@@ -198,7 +198,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-                                </div>
+                                </div>  
                             </div>
 
                             <div class="form-group row">

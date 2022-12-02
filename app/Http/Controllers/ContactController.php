@@ -20,7 +20,7 @@ class ContactController
           'email' => 'required',
           'subject' => 'required',
           'message' => 'required',
-           'g-recaptcha-response' => ['required', new Recaptcha()]
+        //    'g-recaptcha-response' => ['required', new Recaptcha()]
        ]);
 
            $contactDetails = [
@@ -30,7 +30,7 @@ class ContactController
                'message' => $request->message
            ];
 
-           Mail::to('ankit4gaurav@gmail.com')->send(new \App\Mail\Contact($contactDetails));
+           Mail::to('support@programming-assignment-solvers.com')->send(new \App\Mail\Contact($contactDetails));
 
            if(Mail::failures()){
                return back()->with('error', 'Something went wrong, please try again later!');

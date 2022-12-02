@@ -329,7 +329,6 @@ ul.services-links__list.list--clean li {
                 <li class="nav-item"><a href="/#" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="/#testimonial" class="nav-link link-dark px-2">Testimonial</a></li>
                 <li class="nav-item"><a href="/#pricing" class="nav-link link-dark px-2">Pricing</a></li>
-                <li class="nav-item"><a href="/#faq" class="nav-link link-dark px-2">FAQs</a></li>
                 <li class="nav-item"><a href="/#services" class="nav-link link-dark px-2">Services</a></li>
                 <li class="nav-item"><a href="/#blog" class="nav-link link-dark px-2">Blog</a></li>
                   <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link link-dark px-2">Contact</a></li>
@@ -404,13 +403,13 @@ ul.services-links__list.list--clean li {
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Subjects
+              Services
             </h6>
             <?php
                     foreach($subjects as $subject){
                      ?>
             <p>
-              <a href="#!" class="text-reset"><?=$subject['title']?></a>
+              <a class="text-reset" href="{{route('services.view',['slug' => $subject['slug']])}}"><?=$subject['title']?></a>
             </p>
            <?php } ?>
           </div>

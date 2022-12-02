@@ -27,7 +27,7 @@ class OrderController extends SendEmailController
             'subject' => 'required',
             'deadline' => 'required',
             'no_pages' => 'required',
-            'number' => 'required|numeric|size:10',
+            'number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'assignment_file' => 'mimes:pdf,png,jpg,jpeg'
         ],
             ['no_pages.required' => 'Number of pages is required', 'number.required' => 'Contact number is required', 'number.numeric' => 'Contact number must be number', 'number.size' => 'Contact number must be 10 digits'],

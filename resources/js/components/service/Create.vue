@@ -20,7 +20,7 @@
                     <div class="form-group">
                             <label>Is Featured</label>
                             <select name="is_featured" v-model="is_featured" id="is_featured" class="form-control" :class="{ 'is-invalid': errors.is_featured} ">
-                                <option value="">Select User Role</option>
+                                <option value="">Select</option>
                                 <option value="1">Yes</option>
                                 <option value="0">No</option>
                             </select>

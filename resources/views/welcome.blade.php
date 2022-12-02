@@ -3,7 +3,7 @@
 <div class="primary p-5 layout align-center column justify-center">
    <div class="">
       <h1 align="center" class="text-white">
-         Our <span class="warning--text">Popular</span> Subjects
+         Our <span class="warning--text">Popular</span> Services
       </h1>
       <p align="center" class="text-white">
          Experts in multiple domains ready to help
@@ -204,42 +204,42 @@
    </p>
    <div class="row">
       <div class="col-sm-3 col-12 mb-3">
-         <div class="rounded theme--light secondary p-3">
+         <div class="rounded theme--light primary p-3 text-center">
             <div >
-               <div class="fw-bold text-white">
+               <div class="fw-bold text-white" style="font-size: 18px;letter-spacing: 0.1rem;text-align: center;">
                   Qualified experts
                </div>
-               <div class="body-1">The words “professional experts” evoke images of people who have experience, knowledge, and talent in a particular sphere of study. The representatives of HomeworkStudios are those people. The reason is that our experts can prove their knowledge and readiness to help students. Get our help online to make sure of this!</div>
+               <div class="body-1 mt-2 text-white">The words “professional experts” evoke images of people who have experience, knowledge, and talent in a particular sphere of study. The representatives of HomeworkStudios are those people. The reason is that our experts can prove their knowledge and readiness to help students. Get our help online to make sure of this!</div>
             </div>
          </div>
       </div>
       <div class="col-sm-3 col-12 mb-3">
-         <div class="rounded theme--light secondary p-3">
+         <div class="rounded theme--light primary p-3 text-center">
             <div >
-               <div class="fw-bold text-white">
+               <div class="fw-bold text-white" style="font-size: 18px;letter-spacing: 0.1rem;text-align: center;">
                   Reliability
                </div>
-               <div class="body-1">A visit to our service is no longer considered a unique event because there is nothing wrong with getting our programming homework help. Every day customers place orders here, and we never let them down in terms of reliability. Our service has become a familiar part of many students’ lives because we do everything possible to satisfy them.</div>
+               <div class="body-1 mt-2 text-white" >A visit to our service is no longer considered a unique event because there is nothing wrong with getting our programming homework help. Every day customers place orders here, and we never let them down in terms of reliability. Our service has become a familiar part of many students’ lives because we do everything possible to satisfy them.</div>
             </div>
          </div>
       </div>
       <div class="col-sm-3 col-12 mb-3">
-         <div class="rounded theme--light secondary p-3">
+         <div class="rounded theme--light primary p-3 text-center">
             <div >
-               <div class="fw-bold text-white">
+               <div class="fw-bold text-white" style="font-size: 18px;letter-spacing: 0.1rem;text-align: center;">
                   Help with assignment
                </div>
-               <div class="body-1">Among other benefits, there is one that deserves special attention – get any kind of assistance. Here, you can get help with the assignment for the first programming course in college or with the last course in university. Our experts can assist you with a project of any academic level. You can get a solution to any of your challenges with homework.</div>
+               <div class="body-1 mt-2 text-white">Among other benefits, there is one that deserves special attention – get any kind of assistance. Here, you can get help with the assignment for the first programming course in college or with the last course in university. Our experts can assist you with a project of any academic level. You can get a solution to any of your challenges with homework.</div>
             </div>
          </div>
       </div>
       <div class="col-sm-3 col-12 mb-3">
-         <div class="rounded theme--light secondary p-3">
+         <div class="rounded theme--light primary p-3 text-center">
             <div >
-               <div class="fw-bold text-white">
+               <div class="fw-bold text-white" style="font-size: 18px;letter-spacing: 0.1rem;text-align: center;">
                   Quick assistance
                </div>
-               <div class="body-1">It won’t take much time to get help on HomeworkStudios. While placing an order online, you need to set the deadline, which will be strictly followed by the expert. This condition should be met by each expert who works on our service. We provide customers with fast help to allow them to submit their finished assignments on time.</div>
+               <div class="body-1 mt-2 text-white">It won’t take much time to get help on HomeworkStudios. While placing an order online, you need to set the deadline, which will be strictly followed by the expert. This condition should be met by each expert who works on our service. We provide customers with fast help to allow them to submit their finished assignments on time.</div>
             </div>
          </div>
       </div>
@@ -326,58 +326,22 @@
       The most reliable source to succeed
    </p>
    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <?php
+       foreach($prices as $price){
+           ?>
       <div class="col">
          <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
-               <h4 class="my-0 fw-normal">Executable
-                  Code</h4>
+               <h4 class="my-0 fw-normal"><?=$price['title']?></h4>
             </div>
-            <div class="card-body">
-               <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
-               <ul class="list-unstyled mt-3 mb-4">
-                  <li>10 users included</li>
-                  <li>2 GB of storage</li>
-                  <li>Email support</li>
-                  <li>Help center access</li>
-               </ul>
+            <div class="card-body" style="display: contents">
+               <h1 class="card-title pricing-card-title">$<?= $price['price']?><small class="text-muted fw-light">/mo</small></h1>
+               <div class="row"><p>Time : <?=$price['description']?></p></div>
                <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
             </div>
          </div>
       </div>
-      <div class="col">
-         <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-               <h4 class="my-0 fw-normal">Well-Commented Code</h4>
-            </div>
-            <div class="card-body">
-               <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
-               <ul class="list-unstyled mt-3 mb-4">
-                  <li>20 users included</li>
-                  <li>10 GB of storage</li>
-                  <li>Priority email support</li>
-                  <li>Help center access</li>
-               </ul>
-               <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
-            </div>
-         </div>
-      </div>
-      <div class="col">
-         <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 text-white primary">
-               <h4 class="my-0 fw-normal">Well-Commented Code& Report</h4>
-            </div>
-            <div class="card-body">
-               <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
-               <ul class="list-unstyled mt-3 mb-4">
-                  <li>30 users included</li>
-                  <li>15 GB of storage</li>
-                  <li>Phone and email support</li>
-                  <li>Help center access</li>
-               </ul>
-               <a class="w-100 btn btn-lg primary text-white" href="{{ url('/order') }}">Order now</a>
-            </div>
-         </div>
-      </div>
+      <?php } ?>
    </div>
 </div>
 </section>
@@ -494,7 +458,7 @@
    <div class="container">
      <ul class="services-links__list list--clean">
        <?php foreach($services as $service){?>
-       <li><a class="text-white" href="/services/"$service['slug']><?=$service['title']?></a></li>
+       <li><a class="text-white" style="font-weight: 500;font-size:18px" href="{{route('services.view',['slug' => $subject['slug']])}}"><?=$service['title']?></a></li>
          <?php } ?>
      </ul>
    </div>

@@ -86,8 +86,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <div class="col-md-12">
+                            {{-- <div class="form-group row"> --}}
+                                {{-- <div class="col-md-12">
                                     <div class="g-recaptcha @error('g-recaptcha-response') is-invalid @enderror" id="feedback-recaptcha"
                                          data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}">
                                     </div>
@@ -97,7 +97,7 @@
                                     </span>
                                     @enderror
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-12">
